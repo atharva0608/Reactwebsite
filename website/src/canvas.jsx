@@ -3,14 +3,13 @@ import canvasimages from "./canvasimages";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";    
 
-function Canvas( {details}) { 
-  const{startIndex, numImages, duration, size, top, left, ZIndex } = details;
+function Canvas( {startIndex}) { 
   const [index, setIndex] = useState({value:startIndex});
   const canvasRef = useRef(null);
   useGSAP(() => {
     gsap.to(index, {
-      value:startIndex + numImages - 1,
-      duration: duration,
+      value:startIndex + 149,
+      duration: 5,
       repeat: -1,
       ease: "linear",
       onUpdate: () => {
@@ -29,7 +28,7 @@ function Canvas( {details}) {
       ctx.drawImage(img, 0, 0);
     };
   }, [index]);
-  return <canvas ref={canvasRef}  style= {{ width:'${size}px' , height:'${size}px'}} id="canvas"></canvas>;
+  return <canvas ref={canvasRef}  style= {{ width:'${188}px' , height:'${188}px'}} id="canvas"></canvas>;
   
 }
 
