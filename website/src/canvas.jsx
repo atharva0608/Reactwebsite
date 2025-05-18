@@ -1,28 +1,35 @@
-import{useState,useEffect} from 'react';
-import canvasimage from './canvasimage';
+import { useEffect, useRef, useState } from "react";
+import canvasimages from "./canvasimages";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";    
 
-function Canvas() {
-const [canvas, setCanvas] = useState(null);
-const [ctx, setCtx] = useState(null);
-
-useEffect(() => {
-    const canvasElement = document.getElementById('canvaas');
-    setCanvas(canvasElement);
-    setCtx(canvasElement.getContext('2d'));
-
-    if (canvasElement && canvasimages.length > 0) {
-        const img = new Image();
-        img.src = canvasimages[0];
-        img.onload = () => {
-            canvasElement.width = img.width;
-            canvasElement.height = img.height;
-            canvasElement.getContext('2d').drawImage(img, 0, 0);
-        };
-    }
-      
+function Canvas( {details}) { 
+  const{startIndex, numImages, duration, size, top, left, ZIndex } = details;
+  const [index, setIndex] = useState({value:startIndex});
+  const canvasRef = useRef(null);
+  useGSAP(() => {
+    gsap.to(index, {
+      value:startIndex + numImages - 1,
+      duration: duration,
+      repeat: -1,
+      ease: "linear",
+      onUpdate: () => {
+        setIndex({value: Math.floor(index.value)});
+      },
     });
-  return 
-
+  }, [])
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext('2d');
+    const img = new Image();
+    img.src = canvasimages[index.value];
+    img.onload = () => {
+      canvas.width = img.width;
+      canvas.height = img.height;
+      ctx.drawImage(img, 0, 0);
+    };
+  }, [index]);
+  return <canvas ref={canvasRef}  style= {{ width:'${size}px' , height:'${size}px'}} id="canvas"></canvas>;
   
 }
 
