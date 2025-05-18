@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <div className="w-full relative min-h-screen bg-black text-white">
-        <Background />
+       
         {data[0].map((canvasdets, index) => (
           <Canvas details={canvasdets} key={index} />
         ))}
