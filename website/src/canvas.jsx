@@ -8,6 +8,7 @@ function Canvas({ details }) {
 
   const [index, setIndex] = useState({ value: startIndex });
   const canvasRef = useRef(null);
+   
 
   useGSAP(() => {
     gsap.to(index, {
@@ -18,7 +19,7 @@ function Canvas({ details }) {
       onUpdate: () => {
         setIndex({ value: Math.round(index.value) });
       },
-    });
+    });  
   });
   useEffect(() => {
     const scale = window.devicePixelRatio;
@@ -37,15 +38,17 @@ function Canvas({ details }) {
     };
   }, [index]);
   return ( <canvas
+   data-scroll
+    data-scroll-speed={Math.random().toFixed(1)}
     ref={canvasRef}
     className="absolute"
       style={{
-        width: `${size * 1.8}px`,
-        height: `${size * 1.8}px`,
+        width: `${size * 1.5}px`,
+        height: `${size * 1.5}px`,
         top: `${top}%`,
         left: `${left}%`,
         zIndex: `${zIndex}`,
-      }}
+      }} 
     id="canvas"
   ></canvas>
   );
