@@ -64,13 +64,14 @@ export default [
           zIndex: 0,
       },
   ],
+  
   [
       {
           startIndex: 0,
           numImages: 150,
           duration: 3,
           size: 162,
-          top: 22,
+          top: 20,
           left: 11,
           zIndex: 0,
       },
@@ -120,6 +121,7 @@ export default [
           zIndex: 0,
       },
   ],
+
   [
       {
           startIndex: 0,
@@ -149,6 +151,7 @@ export default [
           zIndex: 0,
       },
   ],
+
   [
       {
           startIndex: 0,
@@ -196,6 +199,7 @@ export default [
           zIndex: 0,
       },
   ],
+
   [
       {
           startIndex: 0,
@@ -225,6 +229,7 @@ export default [
           zIndex: 0,
       },
   ],
+
   [
       {
           startIndex: 0,
@@ -254,6 +259,7 @@ export default [
           zIndex: 2,
       },
   ],
+
   [
       {
           startIndex: 0,
@@ -283,6 +289,7 @@ export default [
           zIndex: 0,
       },
   ],
+
   [
       {
           startIndex: 0,
@@ -339,6 +346,7 @@ export default [
           zIndex: 0,
       },
   ],
+
   [
       {
           startIndex: 0,
