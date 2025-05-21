@@ -1,5 +1,19 @@
 @import "tailwindcss";
 
 body {
- background-color: black;
+  background-color: black;
+  max-width: 100%;
+}
+
+@media (max-width: 640px) {
+  body {
+    scroll-behavior: smooth;
+    
+    position: relative;
+    width: 100%;
+  }
+
+  html {
+    overflow-x: hidden;
+  }
 }
