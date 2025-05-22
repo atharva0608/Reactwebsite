@@ -139,7 +139,7 @@ export default [
           size: 101,
           top: 21,
           left: 47,
-          zIndex: 0,
+          zIndex: -1,
       },
       {
           startIndex: 300,
@@ -208,7 +208,7 @@ export default [
           size: 121,
           top: 88,
           left: 0,
-          zIndex: 0,
+          zIndex: 2,
       },
       {
           startIndex: 150,
@@ -217,7 +217,7 @@ export default [
           size: 256,
           top: 83,
           left: 50,
-          zIndex: 0,
+          zIndex: 2,
       },
       {
           startIndex: 300,
@@ -316,7 +316,7 @@ export default [
           size: 192,
           top: 66,
           left: 27,
-          zIndex: 0,
+          zIndex: 3,
       },
       {
           startIndex: 450,
