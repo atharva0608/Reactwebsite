@@ -19,7 +19,7 @@ const Skills = ({ canvasDetails }) => {
   ];
 
   return (
-    <div id="skills" className="w-full relative min-h-screen bg-black text-white px-4 py-16 mt-24 overflow-visible -z-2">
+    <div id="skills" className="w-full relative min-h-screen text-white px-4 py-16 mt-24 overflow-visible -z-2">
       {canvasDetails.map((canvasdets, index) => (
         <Canvas details={canvasdets} key={index} />
       ))}

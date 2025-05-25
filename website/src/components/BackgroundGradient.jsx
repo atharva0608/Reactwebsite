@@ -1,5 +1,7 @@
 export default function BackgroundGradient() {
   return (
-    <div className="fixed inset-0 bg-gradient-to-br from-black via-gray-900 to-blue-900 -z-10" />
+    <div className="fixed inset-0 -z-10 flex">
+       <div className="fixed inset-0 bg-gradient-to-br from-black via-gray-900 to-blue-900 -z-10" />
+    </div>
   );
 }

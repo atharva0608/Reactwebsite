@@ -2,7 +2,7 @@ import React from 'react';
 
 const Contact = () => {
   return (
-    <div id="contact" className="w-full relative min-h-screen font-[Helvetica_Now_Display] flex flex-col justify-center items-center py-16 bg-black text-white px-4">
+    <div id="contact" className="w-full relative min-h-screen font-[Helvetica_Now_Display] flex flex-col justify-center items-center py-16 text-white px-4">
       <footer className="w-full max-w-4xl flex flex-col items-center gap-6 text-center">
         <p className="italic text-lg sm:text-xl md:text-2xl max-w-md mx-auto">
           Let's build something amazing together — <span className="font-semibold">hire me!</span>
