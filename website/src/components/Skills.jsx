@@ -40,7 +40,7 @@ const Skills = ({ canvasDetails }) => {
         <p className="text-center mb-16">
           Visit my{" "}
           <a 
-            href="https://linkedin.com/in/yourprofile" 
+            href="https://linkedin.com/in/atharva608"
             className="text-blue-400 hover:text-blue-300 underline"
             target="_blank"
             rel="noopener noreferrer"
