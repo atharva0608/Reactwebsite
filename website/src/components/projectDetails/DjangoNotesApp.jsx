@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 const DjangoNotesApp = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const projectDetails = {
     title: "Containerization of Django Notes App with Docker and Docker Compose",
     description: "A containerized Django application for note-taking, featuring a modern UI and seamless deployment using Docker and Docker Compose",

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const Hero2 = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 py-8 md:py-16">
+    <div className="min-h-screen flex items-center justify-center px-4 py-8 md:py-16 mt-16 sm:mt-20 md:mt-0">
       <div className="container mx-auto max-w-6xl flex flex-col-reverse md:flex-row items-center justify-between gap-8 md:gap-12">
         {/* Left Content */}
         <motion.div 

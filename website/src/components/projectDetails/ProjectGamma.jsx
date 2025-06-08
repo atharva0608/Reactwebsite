@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 const ProjectGamma = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const projectDetails = {
     title: "Project Gamma",
     description: "A revolutionary tech infrastructure solution that transforms the way organizations handle their IT operations",

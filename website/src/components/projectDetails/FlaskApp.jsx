@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 const FlaskApp = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const projectDetails = {
     title: "Automating Deployment of a Two-Tier Flask Application",
     description: "A comprehensive deployment automation solution for a Flask application using Jenkins, Docker, and Docker Compose",

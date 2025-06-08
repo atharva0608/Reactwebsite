@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 const DevOpsCICD = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const projectDetails = {
     title: "DevOps CI/CD",
     description: "A comprehensive CI/CD pipeline implementation using Jenkins, Docker, Kubernetes, and ArgoCD",

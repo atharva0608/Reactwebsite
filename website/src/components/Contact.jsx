@@ -9,7 +9,7 @@ const Contact = () => {
         </p>
         <div className="flex gap-8 mt-4">
           <a 
-            href="https://github.com/yourusername" 
+            href="https://github.com/atharva0608" 
             target="_blank" 
             rel="noopener noreferrer" 
             aria-label="GitHub"
@@ -25,7 +25,7 @@ const Contact = () => {
             </svg>
           </a>
           <a 
-            href="https://linkedin.com/in/yourusername" 
+            href="https://linkedin.com/in/atharva608" 
             target="_blank" 
             rel="noopener noreferrer" 
             aria-label="LinkedIn"
@@ -43,18 +43,18 @@ const Contact = () => {
         </div>
         <div className="mt-4 text-lg">
           <a 
-            href="mailto:your.email@example.com"
+            href="mailto:atharvapudale0608@gmail.com.com"
             className="block text-white hover:text-[#00ffff] transition-colors duration-300"
           >
-            Email: your.email@example.com
+            Email: atharvapudale0608@gmail.com
           </a>
           <a 
-            href="https://wa.me/12345678900" 
+            href="https://wa.me/917972533419" 
             target="_blank"
             rel="noopener noreferrer"
             className="block text-white hover:text-[#00ffff] transition-colors duration-300"
           >
-            Phone: +1 (234) 567-8900
+            Phone: +91 7972533419
           </a>
         </div>
       </footer>
