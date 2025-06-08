@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Canvas from '../canvas';
 
 const Projects = ({ canvasDetails }) => {
@@ -63,15 +64,21 @@ const Projects = ({ canvasDetails }) => {
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">{project.title}</h2>
                 <p className="text-lg md:text-xl mb-6">{project.description}</p>
                 <div className={`flex justify-center ${index % 2 === 0 ? 'md:justify-start' : 'md:justify-end'}`}>
-                  <a href="#" className="bg-red-500 text-white px-4 md:px-6 py-2 md:py-3 inline-block w-fit hover:bg-red-600 transition-colors">
-                    More <span className="ml-2">→</span>
-                  </a>
+                  <Link 
+                    to={`/project/${index === 0 ? 'devops-cicd' : 
+                         index === 1 ? 'flask-app' : 
+                         index === 2 ? 'project-gamma' : 
+                         'django-notes-app'}`} 
+                    className="bg-red-500 text-white px-4 md:px-6 py-2 md:py-3 inline-block w-fit hover:bg-red-600 transition-colors"
+                  >
+                    View Details <span className="ml-2">→</span>
+                  </Link>
                 </div>
               </div>
               <img 
                 src={project.image} 
                 alt={project.title} 
-                className={`w-full md:w-[300px] h-[200px] object-cover rounded-lg brightness-75 mt-4 md:mt-0 ${index % 2 === 0 ? 'md:ml-8' : 'md:mr-8'}`}
+                className={`w-full md:w-[250px] lg:w-[300px] h-[200px] object-cover rounded-lg brightness-75 mt-4 md:mt-0 ${index % 2 === 0 ? 'md:ml-8' : 'md:mr-8'}`}
               />
             </div>
           </div>
