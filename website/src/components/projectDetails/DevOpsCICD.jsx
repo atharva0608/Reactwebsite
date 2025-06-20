@@ -6,28 +6,46 @@ const DevOpsCICD = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   const projectDetails = {
-    title: "DevOps CI/CD",
-    description: "A comprehensive CI/CD pipeline implementation using Jenkins, Docker, Kubernetes, and ArgoCD",
+    title: "Complete Production CI/CD Pipeline",
+    description: "The Complete Production CI/CD Pipeline Project is a real-world, cloud-native DevOps project that demonstrates a complete CI/CD pipeline and infrastructure automation for deploying a scalable travel booking application.The project is built on a microservices architecture with a React.js frontend and a Node.js (Express) backend, fully containerized using Docker and deployed on a Kubernetes cluster (AKS/EKS). Infrastructure and application lifecycle management is done through Terraform, Helm, and ArgoCD, ensuring a production-grade setup.",
     technologies: [
-      "Jenkins",
+      "React.js",
+      "Node.js",
+      "MongoDB",
       "Docker",
       "Kubernetes",
+      "Terraform",
+      "Jenkins",
       "ArgoCD",
-      "Git",
-      "GitHub Actions",
-      "AWS"
+      "Helm",
+      "Prometheus",
+      "Grafana",
+      "SonarQube"
     ],
     features: [
-      "Automated build and deployment pipeline",
-      "Containerized application deployment",
-      "Kubernetes orchestration",
-      "GitOps with ArgoCD",
-      "Infrastructure as Code",
-      "Continuous monitoring and logging"
+      "Microservices Architecture with React frontend and Node.js backend",
+      "Containerization with Docker and Kubernetes orchestration",
+      "Infrastructure as Code using Terraform",
+      "CI/CD pipeline with Jenkins and ArgoCD",
+      "GitOps workflow with Helm charts",
+      "Security scanning with Trivy and OWASP",
+      "Monitoring and alerting with Prometheus-Grafana",
+      "Code quality enforcement via SonarQube",
+      "NGINX Ingress Controller for traffic routing",
+      "Automated deployment and scaling"
+    ],
+    workflow: [
+      "Code commit triggers Jenkins pipeline",
+      "Security scans and quality checks",
+      "Docker image build and push",
+      "ArgoCD syncs Helm charts",
+      "Kubernetes deployment and scaling",
+      "Continuous monitoring and alerts"
     ],
     github: "DevOps-CI-CD-Pipeline-with-Jenkins-Docker-Kubernetes-ArgoCD",
-    images: ["/images/Project 1.png", "/images/Project 1.png", "/images/Project 1.png"]
+    images: ["/images/cicd-1.png", "/images/cicd-2.png", "/images/cicd-3.png"]
   };
 
   return (
@@ -63,6 +81,32 @@ const DevOpsCICD = () => {
           {projectDetails.description}
         </motion.p>
 
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.7 }}
+          className="mb-12"
+        >
+          <h2 className="text-2xl font-bold mb-6">Project Gallery</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {projectDetails.images.map((image, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3, delay: 0.8 + index * 0.1 }}
+                className="relative group"
+              >
+                <img
+                  src={image}
+                  alt={`Project screenshot ${index + 1}`}
+                  className="w-full h-64 object-cover rounded-lg brightness-90 group-hover:brightness-110 transition-all"
+                />
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -70,7 +114,7 @@ const DevOpsCICD = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6"
           >
-            <h2 className="text-2xl font-bold mb-4">Technologies Used</h2>
+            <h2 className="text-2xl font-bold mb-4">Tech Stack & Tools</h2>
             <div className="flex flex-wrap gap-2">
               {projectDetails.technologies.map((tech, index) => (
                 <motion.span
@@ -115,24 +159,23 @@ const DevOpsCICD = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.7 }}
-          className="mb-12"
+          transition={{ duration: 0.5, delay: 0.6 }}
+          className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 mb-12"
         >
-          <h2 className="text-2xl font-bold mb-6">Project Gallery</h2>
+          <h2 className="text-2xl font-bold mb-4">DevOps Workflow</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {projectDetails.images.map((image, index) => (
+            {projectDetails.workflow.map((step, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.3, delay: 0.8 + index * 0.1 }}
-                className="relative group"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.7 + index * 0.1 }}
+                className="bg-gray-700/30 rounded-lg p-4 flex items-center"
               >
-                <img
-                  src={image}
-                  alt={`Project screenshot ${index + 1}`}
-                  className="w-full h-64 object-cover rounded-lg brightness-90 group-hover:brightness-110 transition-all"
-                />
+                <span className="w-8 h-8 bg-blue-500/20 text-blue-300 rounded-full flex items-center justify-center mr-3">
+                  {index + 1}
+                </span>
+                <span>{step}</span>
               </motion.div>
             ))}
           </div>

@@ -6,29 +6,38 @@ const ProjectGamma = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   const projectDetails = {
-    title: "Project Gamma",
-    description: "A revolutionary tech infrastructure solution that transforms the way organizations handle their IT operations",
+    title: "k8s-kind-voting-app – GitOps Voting Application with Kind, Argo CD & Helm",
+    description: "In this self-implemented DevOps project, I deployed a multi-service voting application on Kubernetes using Kind (Kubernetes-in-Docker) and GitOps automation via Argo CD, complemented by Helm for packaging and Prometheus/Grafana for observability.",
     technologies: [
-      "Cloud Native",
-      "Microservices",
-      "Kubernetes",
-      "Service Mesh",
+      "Docker",
+      "Kubernetes (Kind)",
+      "Helm Charts", 
+      "Argo CD",
       "Prometheus",
       "Grafana",
-      "Terraform",
-      "AWS"
+      "AWS EC2"
     ],
     features: [
-      "Scalable microservices architecture",
-      "Advanced monitoring and alerting",
-      "Automated infrastructure provisioning",
-      "High availability setup",
-      "Zero-downtime deployments",
-      "Disaster recovery planning"
+      "Local multi-node Kubernetes cluster with Kind on AWS EC2",
+      "Multi-service architecture (Python frontend, Redis, .NET worker, PostgreSQL, Node.js backend)",
+      "GitOps deployment automation with Argo CD",
+      "Container orchestration & Helm packaging",
+      "Service exposure via NodePort",
+      "Comprehensive monitoring with Prometheus/Grafana",
+      "Kubernetes Dashboard with RBAC"
     ],
-    github: "project-gamma",
-    images: ["/images/Project 3.png", "/images/arch-diagram.png", "/images/metrics-dashboard.png"]
+    workflow: [
+      "Code commit triggers pipeline",
+      "Container images built and pushed",
+      "ArgoCD syncs Helm charts",
+      "Kubernetes deployment",
+      "Monitoring setup",
+      "Service exposure"
+    ],
+    github: "k8s-kind-voting-app",
+    images: ["/images/obs-1.png", "/images/obs-2.png", "/images/obs-3.png"]
   };
 
   return (
@@ -64,6 +73,32 @@ const ProjectGamma = () => {
           {projectDetails.description}
         </motion.p>
 
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.7 }}
+          className="mb-12"
+        >
+          <h2 className="text-2xl font-bold mb-6">Project Gallery</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {projectDetails.images.map((image, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3, delay: 0.8 + index * 0.1 }}
+                className="relative group"
+              >
+                <img
+                  src={image}
+                  alt={`Project screenshot ${index + 1}`}
+                  className="w-full h-64 object-cover rounded-lg brightness-90 group-hover:brightness-110 transition-all"
+                />
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -71,7 +106,7 @@ const ProjectGamma = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6"
           >
-            <h2 className="text-2xl font-bold mb-4">Technologies Used</h2>
+            <h2 className="text-2xl font-bold mb-4">Tech Stack & Tools</h2>
             <div className="flex flex-wrap gap-2">
               {projectDetails.technologies.map((tech, index) => (
                 <motion.span
@@ -116,24 +151,23 @@ const ProjectGamma = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.7 }}
-          className="mb-12"
+          transition={{ duration: 0.5, delay: 0.6 }}
+          className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 mb-12"
         >
-          <h2 className="text-2xl font-bold mb-6">Project Gallery</h2>
+          <h2 className="text-2xl font-bold mb-4">DevOps Workflow</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {projectDetails.images.map((image, index) => (
+            {projectDetails.workflow.map((step, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.3, delay: 0.8 + index * 0.1 }}
-                className="relative group"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.7 + index * 0.1 }}
+                className="bg-gray-700/30 rounded-lg p-4 flex items-center"
               >
-                <img
-                  src={image}
-                  alt={`Project screenshot ${index + 1}`}
-                  className="w-full h-64 object-cover rounded-lg brightness-90 group-hover:brightness-110 transition-all"
-                />
+                <span className="w-8 h-8 bg-blue-500/20 text-blue-300 rounded-full flex items-center justify-center mr-3">
+                  {index + 1}
+                </span>
+                <span>{step}</span>
               </motion.div>
             ))}
           </div>

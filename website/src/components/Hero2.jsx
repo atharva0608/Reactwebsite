@@ -53,7 +53,7 @@ const Hero2 = () => {
             <div className="w-full aspect-square rounded-full bg-blue-500/20 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-pulse "></div>
             <div className="w-full aspect-square rounded-full overflow-hidden relative z-10 drop-shadow-2xl mx-auto">
               <img 
-                src="/images/profile.png"
+                // src="/images/profile.png"
                 alt="Hero Illustration"
                 className="w-full h-full object-cover"
               />

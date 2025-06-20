@@ -6,28 +6,37 @@ const DjangoNotesApp = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  
   const projectDetails = {
-    title: "Containerization of Django Notes App with Docker and Docker Compose",
-    description: "A containerized Django application for note-taking, featuring a modern UI and seamless deployment using Docker and Docker Compose",
+    title: "DevOps AKS Project – End-to-End Production-Grade Kubernetes Deployment on Azure",
+    description: "A cloud-native, production-ready deployment architecture built on Azure Kubernetes Service (AKS), incorporating modern DevOps practices and tools for robust microservices platform with full automation and secure service-to-service communication.",
     technologies: [
-      "Django",
-      "Python",
+      "Azure Kubernetes Service",
+      "Terraform", 
+      "Apache APISIX",
+      "HashiCorp Consul",
+      "Helm",
+      "Azure Cloud",
       "Docker",
-      "Docker Compose",
-      "PostgreSQL",
-      "Nginx",
-      "Gunicorn",
-      "Bootstrap"
+      "Kubernetes"
     ],
     features: [
-      "Containerized application architecture",
-      "Multi-container orchestration",
-      "Persistent data storage",
-      "User authentication system",
-      "CRUD operations for notes",
-      "Production-ready setup"
+      "Custom VNet with subnets, route tables, and NSGs",
+      "Highly available AKS cluster with node pools",
+      "Apache APISIX as ingress controller", 
+      "Consul service mesh for mTLS communication",
+      "Helm charts for microservices deployment",
+      "Multi-environment support (dev/stage/prod)"
     ],
-    github: "project-delta",
+    workflow: [
+      "Infrastructure provisioning with Terraform",
+      "AKS cluster deployment and configuration",
+      "Service mesh and ingress setup",
+      "Application deployment via Helm",
+      "Monitoring and observability setup",
+      "Security hardening and testing"
+    ],
+    github: "Devops-aks-Project",
     images: ["/images/Project 3.png", "/images/notes-app.png", "/images/docker-setup.png"]
   };
 
@@ -64,6 +73,32 @@ const DjangoNotesApp = () => {
           {projectDetails.description}
         </motion.p>
 
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.7 }}
+          className="mb-12"
+        >
+          <h2 className="text-2xl font-bold mb-6">Project Gallery</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {projectDetails.images.map((image, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3, delay: 0.8 + index * 0.1 }}
+                className="relative group"
+              >
+                <img
+                  src={image}
+                  alt={`Project screenshot ${index + 1}`}
+                  className="w-full h-64 object-cover rounded-lg brightness-90 group-hover:brightness-110 transition-all"
+                />
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -71,7 +106,7 @@ const DjangoNotesApp = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6"
           >
-            <h2 className="text-2xl font-bold mb-4">Technologies Used</h2>
+            <h2 className="text-2xl font-bold mb-4">Tech Stack & Tools</h2>
             <div className="flex flex-wrap gap-2">
               {projectDetails.technologies.map((tech, index) => (
                 <motion.span
@@ -116,24 +151,23 @@ const DjangoNotesApp = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.7 }}
-          className="mb-12"
+          transition={{ duration: 0.5, delay: 0.6 }}
+          className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 mb-12"
         >
-          <h2 className="text-2xl font-bold mb-6">Project Gallery</h2>
+          <h2 className="text-2xl font-bold mb-4">DevOps Workflow</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {projectDetails.images.map((image, index) => (
+            {projectDetails.workflow.map((step, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.3, delay: 0.8 + index * 0.1 }}
-                className="relative group"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.7 + index * 0.1 }}
+                className="bg-gray-700/30 rounded-lg p-4 flex items-center"
               >
-                <img
-                  src={image}
-                  alt={`Project screenshot ${index + 1}`}
-                  className="w-full h-64 object-cover rounded-lg brightness-90 group-hover:brightness-110 transition-all"
-                />
+                <span className="w-8 h-8 bg-blue-500/20 text-blue-300 rounded-full flex items-center justify-center mr-3">
+                  {index + 1}
+                </span>
+                <span>{step}</span>
               </motion.div>
             ))}
           </div>
